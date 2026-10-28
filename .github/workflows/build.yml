@@ -11,11 +11,11 @@ jobs:
         with:
           distribution: temurin
           java-version: 21
-      - uses: gradle/gradle-build-action@v2
+      - uses: gradle/actions/setup-gradle@v3
         with:
           gradle-version: 8.5
-          arguments: build
+      - run: ./gradlew build
       - uses: actions/upload-artifact@v4
         with:
           name: kubosky-jar
-          path: build/libs/kubosky-1.2.0.jar
+          path: build/libs/*.jar
