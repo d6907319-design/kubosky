@@ -1,0 +1,21 @@
+name: build
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+      - uses: gradle/gradle-build-action@v2
+        with:
+          gradle-version: 7.3.3
+          arguments: build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kubosky-jar
+          path: build/libs/kubosky-1.2.0.jar

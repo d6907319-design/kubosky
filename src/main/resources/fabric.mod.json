@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "kubosky",
+  "version": "${version}",
+  "name": "Kubo Sky",
+  "description": "Своё небо: цвета, звёзды, солнце, луна, облака. Настройки в игре на клавише K.",
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": { "client": ["dev.kubosky.KuboSkyClient"] },
+  "mixins": ["kubosky.mixins.json"],
+  "depends": { "fabricloader": ">=0.11.3", "fabric": "*", "minecraft": "1.16.x" }
+}
