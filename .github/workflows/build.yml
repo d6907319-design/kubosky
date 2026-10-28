@@ -13,7 +13,7 @@ jobs:
           java-version: 17
       - uses: gradle/gradle-build-action@v2
         with:
-          gradle-version: 7.3.3
+          gradle-version: 8.5
           arguments: build
       - uses: actions/upload-artifact@v4
         with:
